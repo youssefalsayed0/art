@@ -4,6 +4,7 @@ const BASE_URL = process.env.API;
 
 
 export const getpriceAction = async (formData: FormData) => {
+    // console.log('server actions invoked');
 
     // Create a FormData object
 

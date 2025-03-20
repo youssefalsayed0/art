@@ -3,13 +3,13 @@
 import { decode } from "next-auth/jwt";
 import { cookies } from "next/headers";
 import { JSON_HEADER } from "../constants/api.constant";
-import { revalidatePath } from "next/cache";
+
 
 const BASE_URL = process.env.API;
 
 export async function fetchProfile() {
   try {
-    revalidatePath("/settings/profile-my-info"); // Ensure the page is updated each time it's visited
+  
     const locale = cookies().get("NEXT_LOCALE")?.value || "ar";
     const tokenCookie = cookies().get("next-auth.session-token")?.value;
 

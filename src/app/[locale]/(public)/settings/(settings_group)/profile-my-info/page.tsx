@@ -1,3 +1,4 @@
+
 import React from 'react'
 import ContactForm from './_components/contact-form'
 import { getTranslations } from 'next-intl/server'

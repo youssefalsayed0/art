@@ -15,7 +15,6 @@ export const addToCart = async (formData: FormData) => {
     secret: process.env.NEXTAUTH_SECRET!,
   });
 
-  
 
   // إرسال الطلب
   const response = await fetch(BASE_URL + "/cart/add", {
