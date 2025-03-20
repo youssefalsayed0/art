@@ -1,6 +1,7 @@
 'use server';
 
 import { decode } from "next-auth/jwt";
+import { revalidatePath } from "next/cache";
 
 import { cookies } from "next/headers";
 
@@ -44,6 +45,7 @@ export async function fetchProducts(id: string) {
 
 export async function addAndRemoveProducts(id: number) {
   try {
+      revalidatePath("/wishlist"); // Ensure the page is updated each time it's visited
     const locale = cookies().get('NEXT_LOCALE')?.value || "ar";
     const tokenCookie = cookies().get("next-auth.session-token")?.value;
 
